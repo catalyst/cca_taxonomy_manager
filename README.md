@@ -41,7 +41,24 @@ Browe a taxonomy via path such as `/admin/structure/taxonomy/manage/{vocabulary}
 
 Ensure the "Merge taxonomy terms" permission is assigned appropriately.
 
-? Ensure users managing term have Fedora Admin role to persist term changes into fcrepo?
+@todo: check if it is necessary to ensure users managing term have Fedora Admin role to persist term changes into fcrepo.
+
+## Guide
+
+1. To move a term, browse or search within `/admin/structure/taxonomy/manage/{vocabulary}/cca-search` to locate the term(s).
+1. Check the (views bulk operations) checkbox on left of terms table.
+1. Choose "Move term" option from Action select widget.
+1. Click "Apply to selected items" button.
+1. Choose target vocabulary from select widget.
+1. Click "Apply" button.
+1. A batch process will start, "Performing Move term on selected entities"...
+
+Warning: term move does not account for hierarchies, nor does it account for the possible difference in fields assigned to taxonomy terms in different vocabularies.
+@todo: define what will survive a move, e.g. term name, description.
+
+## Known issues
+
+* Page title on cca-search is vocabulary machine name, not human label.
 
 
 ## Maintainers
