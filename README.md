@@ -15,7 +15,7 @@ Currently assumes use in the context of Islandora (https://islandora.ca).
 This module is a Drupal feature, and requires:
 
 * controlled_access_terms
-* controlled_access_terms_defaults
+  * controlled_access_terms_defaults
 * csv_serialization
 * rest
 * search_api
@@ -24,6 +24,7 @@ This module is a Drupal feature, and requires:
 * serialization
 * taxonomy
 * term_merge
+  with patch from https://www.drupal.org/project/term_merge/issues/3089426#comment-14179070 for Create Action for Views Bulk Operations
 * user
 * views
 * views_bulk_operations
