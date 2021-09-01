@@ -9,7 +9,7 @@
         "drupal/search_api": "^1.20",
         "drupal/search_api_db": "^1.8",
         "drupal/term_merge": "1.x-dev@dev",
-        "drupal/views_bulk_operations":"^4.0",
+        "drupal/views_bulk_operations":"^3.0",
         "drupal/views_data_export": "^1.0"
     }
 }
