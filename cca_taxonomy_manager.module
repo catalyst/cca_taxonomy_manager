@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file.
+ * Hook implementations and utility functions for CCA Taxonomy Manager.
+ */
+
+use Drupal\Core\Render\BubbleableMetadata;
+
+
+/**
+ * Allow [vocabulary:*] tokens to be used when data contains a view,
+ * where the vocabulary is the first argument on the view.
+ *
+ * Implements hook_tokens().
+ *
+ * @inheritdoc
+ */
+function cca_taxonomy_manager_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+
+  if ($type == 'vocabulary' && isset($data['view']) && isset($data['view']->args[0])) {
+    $vocabularyStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary');
+    $vocabulary = $vocabularyStorage->load($data['view']->args[0]);
+    if ($vocabulary) {
+      foreach ($tokens as $name => $original) {
+        $replacements[$original] = \Drupal::token()->replace($original, ['vocabulary' => $vocabulary], [], $bubbleable_metadata);
+      }
+    }
+  }
+
+  return $replacements;
+}

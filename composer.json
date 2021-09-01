@@ -1,0 +1,17 @@
+{
+    "name": "islandora/cca_taxonomy_manager",
+    "type": "drupal-module",
+    "description": "Catalyst Community Archive Taxonomy Manager",
+    "homepage": "https://github.com/catalyst/cca_taxonomy_manager",
+    "license": "GPL-2.0+",
+    "require": {
+        "drupal/csv_serialization": "^2.0|^3.0",
+        "drupal/search_api": "^1.20",
+        "drupal/search_api_db": "^1.8",
+        "drupal/term_merge": "1.x-dev@dev",
+        "drupal/views_bulk_operations":"^4.0",
+        "drupal/views_data_export": "^1.0",
+        "islandora/controlled_access_terms": "1.x-dev@dev"
+
+    }
+}
