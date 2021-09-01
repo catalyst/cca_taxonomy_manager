@@ -167,6 +167,11 @@ display:
           action_title: Action
           selected_actions:
             -
+              action_id: cca_term_move
+              preconfiguration:
+                add_confirmation: 0
+                example_preconfig_setting: ''
+            -
               action_id: emit_term_event
               preconfiguration:
                 add_confirmation: 0
@@ -176,10 +181,6 @@ display:
                 add_confirmation: 0
             -
               action_id: views_bulk_operations_delete_entity
-            -
-              action_id: views_bulk_operations_example
-              preconfiguration:
-                example_preconfig_setting: ''
             -
               action_id: 'entity:save_action:taxonomy_term'
               preconfiguration:

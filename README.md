@@ -35,6 +35,15 @@ This module is a Drupal feature, and requires:
 
 If you manage your site dependencies via Composer then this module's dependencies will be installed automatically once the module itself is installed via Composer.
 
+After enabling the module, ensure all terms are indexed in the CCA Taxonomy Manager Term index  /admin/config/search/search-api/index/cca_taxonomy_manager_term_index`
+
+Browe a taxonomy via path such as `/admin/structure/taxonomy/manage/{vocabulary}/cca-search`, e.g. `/admin/structure/taxonomy/manage/person/cca-search`.
+
+Ensure the "Merge taxonomy terms" permission is assigned appropriately.
+
+? Ensure users managing term have Fedora Admin role to persist term changes into fcrepo?
+
+
 ## Maintainers
 
 * Jonathan Hunt - https://www.drupal.org/u/jonathan_hunt
