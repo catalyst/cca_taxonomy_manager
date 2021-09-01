@@ -8,6 +8,8 @@ An experimental, Views-based taxonomy manager:
 * merge multiple terms to a single term
 * move term to a different vocabulary
 
+Currently assumes use in the context of Islandora (https://islandora.ca).
+
 ## Requirements
 
 This module is a Drupal feature, and requires:
