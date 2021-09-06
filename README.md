@@ -25,6 +25,8 @@ This module is a Drupal feature, and requires:
 * taxonomy
 * term_merge
   with patch from https://www.drupal.org/project/term_merge/issues/3089426#comment-14179070 for Create Action for Views Bulk Operations
+* term_reference_change
+  with patch from https://git.drupalcode.org/project/term_reference_change/-/merge_requests/2.patch for merging references in typed_relation fields
 * user
 * views
 * views_bulk_operations
@@ -56,6 +58,18 @@ Ensure the "Merge taxonomy terms" permission is assigned appropriately.
 _Warning: term move does not account for hierarchies, nor does it account for the possible difference in fields assigned to taxonomy terms in different vocabularies._
 
 @todo: define what will survive a move, e.g. term name, description.
+
+1. To merge one or more terms, browse or search within `/admin/structure/taxonomy/manage/{vocabulary}/cca-search` to locate the term(s) to be merged (but not the target term).
+1. Check the (views bulk operations) checkbox on left of terms table.
+1. Choose "Merge terms" option from Action select widget.
+1. Click "Apply to selected items" button.
+1. Choose target term from Existimg term autocomplete widget.
+1. Click "Apply" button.
+
+_Warning: the patch for term_reference_change must be applied in order to update reference in typed_relation fields (e.g. Islandora Object Linked Agent field)._
+
+_Warning: redirects are not added automatically, e.g. from old term to target term._
+
 
 ## Known issues
 
