@@ -35,13 +35,13 @@ This module is a Drupal feature, and requires:
 
 If you manage your site dependencies via Composer then this module's dependencies will be installed automatically once the module itself is installed via Composer.
 
-After enabling the module, ensure all terms are indexed in the CCA Taxonomy Manager Term index  /admin/config/search/search-api/index/cca_taxonomy_manager_term_index`
+After enabling the module, ensure all terms are indexed in the CCA Taxonomy Manager Term index  `/admin/config/search/search-api/index/cca_taxonomy_manager_term_index`
 
 Browe a taxonomy via path such as `/admin/structure/taxonomy/manage/{vocabulary}/cca-search`, e.g. `/admin/structure/taxonomy/manage/person/cca-search`.
 
 Ensure the "Merge taxonomy terms" permission is assigned appropriately.
 
-@todo: check if it is necessary to ensure users managing term have Fedora Admin role to persist term changes into fcrepo.
+@todo: check if it is necessary to ensure users managing terms have Fedora Admin role to persist term changes into fcrepo.
 
 ## Guide
 
@@ -53,12 +53,13 @@ Ensure the "Merge taxonomy terms" permission is assigned appropriately.
 1. Click "Apply" button.
 1. A batch process will start, "Performing Move term on selected entities"...
 
-Warning: term move does not account for hierarchies, nor does it account for the possible difference in fields assigned to taxonomy terms in different vocabularies.
+_Warning: term move does not account for hierarchies, nor does it account for the possible difference in fields assigned to taxonomy terms in different vocabularies._
+
 @todo: define what will survive a move, e.g. term name, description.
 
 ## Known issues
 
-* Page title on cca-search is vocabulary machine name, not human label.
+* Page title on cca-search view is vocabulary machine name, not human label.
 
 
 ## Maintainers
