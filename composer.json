@@ -11,5 +11,13 @@
         "drupal/term_merge": "1.x-dev",
         "drupal/views_bulk_operations":"^3.0",
         "drupal/views_data_export": "^1.0"
+    },
+    "extra": {
+        "enable-patching": true,
+        "patches": {
+            "drupal/term_merge": {
+                "Issue #3089426: Create Action for Views Bulk Operations": "https://www.drupal.org/files/issues/2021-08-02/term_merge-create_action_for_views_bulk_operations-3089426-05.patch"
+            }
+        }
     }
 }
