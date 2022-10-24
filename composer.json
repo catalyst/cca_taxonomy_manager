@@ -16,7 +16,7 @@
         "enable-patching": true,
         "patches": {
             "drupal/term_merge": {
-                "Issue #3089426: Create Action for Views Bulk Operations": "https://www.drupal.org/files/issues/2021-08-02/term_merge-create_action_for_views_bulk_operations-3089426-05.patch"
+                "Issue #3089426: Create Action for Views Bulk Operations": "https://www.drupal.org/files/issues/2022-10-25/term_merge-create_action_for_views_bulk_operations-3089426-06.patch"
             },
             "drupal/term_reference_change": {
                 "Issue #3231527: Support typed_relation fields": "https://git.drupalcode.org/project/term_reference_change/-/merge_requests/2.patch" 
