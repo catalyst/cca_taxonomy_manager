@@ -5,13 +5,13 @@
     "homepage": "https://github.com/catalyst/cca_taxonomy_manager",
     "license": "GPL-2.0-or-later",
     "require": {
-        "csv_serialization/csv_serialization": "^2.0|^3.0",
-        "search_api/search_api": "^1.20",
-        "search_api_db/search_api_db": "^1.8",
-        "term_merge/term_merge": "^2.0",
-        "term_reference_change/term_reference_change": "^1.0@beta",
-        "views_bulk_operations/views_bulk_operations":"^4.0",
-        "views_data_export/views_data_export": "^1.0"
+        "drupal/csv_serialization": "^2.0|^3.0",
+        "drupal/search_api": "^1.20",
+        "drupal/search_api_db": "^1.8",
+        "drupal/term_merge": "^2.0",
+        "drupal/term_reference_change": "^1.0@beta",
+        "drupal/views_bulk_operations":"^4.0",
+        "drupal/views_data_export": "^1.0"
     },
     "extra": {
         "enable-patching": true,
