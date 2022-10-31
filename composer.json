@@ -3,22 +3,23 @@
     "type": "drupal-module",
     "description": "Catalyst Community Archive Taxonomy Manager",
     "homepage": "https://github.com/catalyst/cca_taxonomy_manager",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "require": {
-        "drupal/csv_serialization": "^2.0|^3.0",
-        "drupal/search_api": "^1.20",
-        "drupal/search_api_db": "^1.8",
-        "drupal/term_merge": "1.x-dev",
-        "drupal/views_bulk_operations":"^4.0",
-        "drupal/views_data_export": "^1.0"
+        "csv_serialization/csv_serialization": "^2.0|^3.0",
+        "search_api/search_api": "^1.20",
+        "search_api_db/search_api_db": "^1.8",
+        "term_merge/term_merge": "^2.0",
+        "term_reference_change/term_reference_change": "^1.0@beta",
+        "views_bulk_operations/views_bulk_operations":"^4.0",
+        "views_data_export/views_data_export": "^1.0"
     },
     "extra": {
         "enable-patching": true,
         "patches": {
-            "drupal/term_merge": {
+            "term_merge/term_merge": {
                 "Issue #3089426: Create Action for Views Bulk Operations": "https://www.drupal.org/files/issues/2022-10-25/term_merge-create_action_for_views_bulk_operations-3089426-06.patch"
             },
-            "drupal/term_reference_change": {
+            "term_reference_change/term_reference_change": {
                 "Issue #3231527: Support typed_relation fields": "https://git.drupalcode.org/project/term_reference_change/-/merge_requests/2.patch" 
             }
         }
