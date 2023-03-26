@@ -1,20 +1,20 @@
 name: 'CCA Taxonomy Manager'
 description: 'Improved administration of taxonomies via search and term merge.'
 type: module
-core_version_requirement: '^8.9 || ^9'
+core_version_requirement: '^9' || '^10'
 dependencies:
-  - controlled_access_terms
-  - controlled_access_terms_defaults
-  - csv_serialization
-  - rest
-  - search_api
-  - search_api_db
-  - serialization
-  - taxonomy
-  - term_merge
-  - user
-  - views
-  - views_bulk_operations
-  - views_data_export
-version: 8.x-1.0-alpha5
+  - controlled_access_terms:controlled_access_terms
+  - controlled_access_terms_defaults:controlled_access_terms_defaults
+  - csv_serialization:csv_serialization
+  - drupal:rest
+  - search_api:search_api
+  - search_api:search_api_db
+  - drupal:serialization
+  - drupal:taxonomy
+  - term_merge:term_merge
+  - drupal:user
+  - drupal:views
+  - views_bulk_operations:views_bulk_operations
+  - views_data_export:views_data_export
+version: 8.x-1.0-alpha6
 package: CCA
