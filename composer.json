@@ -5,7 +5,7 @@
     "homepage": "https://github.com/catalyst/cca_taxonomy_manager",
     "license": "GPL-2.0-or-later",
     "require": {
-        "drupal/csv_serialization": "^2.0|^3.0",
+        "drupal/csv_serialization": "^2.0|^3.0|^4.0",
         "drupal/search_api": "^1.20",
         "drupal/search_api_db": "^1.8",
         "drupal/term_merge": "^2.0",
