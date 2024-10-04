@@ -1,0 +1,7 @@
+cca_taxonomy_manager.settings:
+  path: '/admin/config/cca_taxonomy_manager/settings'
+  defaults:
+    _form: '\Drupal\cca_taxonomy_manager\Form\SettingsForm'
+    _title: 'CCA Taxonomy Manager settings'
+  requirements:
+    _permission: 'administer site configuration'

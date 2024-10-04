@@ -1,0 +1,5 @@
+services:
+  cca_taxonomy_manager.route_subscriber:
+    class: Drupal\cca_taxonomy_manager\Routing\RouteSubscriber
+    tags:
+      - { name: 'event_subscriber' }
