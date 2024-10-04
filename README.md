@@ -70,6 +70,18 @@ _Warning: the patch for term_reference_change must be applied in order to update
 
 _Warning: redirects are not added automatically, e.g. from old term to target term._
 
+### Override taxonomy term list
+e.g. for a vocabulary `tags`:
+1. Visit view edit for CCA Taxonomy Manager search `/admin/structure/views/view/cca_taxonomy_manager_search/edit/admin_page`
+2. Duplicate page:
+3. On new display, set machine_name=tags`; this needs to match the machine name of the taxonomy that we are overriding the term listing for.
+4. Set path=`admin/structure/taxonomy/manage/tags/overview` (this is the path of the core term listing for tags)
+5. Set Menu to be Type=Menu tab, Menu link title=List, Parent=Structure > Taxonomy > Tags, Weight=-5 (i.e. under the default vocabulary list menu item)
+6. Click "Save" button.
+7. Visit `admin/config/cca_taxonomy_manager/settings`, check Keywords `tags`, click "Save configuration".
+8. Now visit `admin/structure/taxonomy/manage/tags/overview` to confirm List display is from CCA Taxonomy Manager `tags` display instead of the Drupal core taxonomy term listing.
+
+To override additional taxonomy term lists, repeat the process of (a) add a view display, (b) adding a new menu tab for the List item, (c) updating CCA Taxonomy Manager settings to specify the taxonomy.
 
 ## Known issues
 
