@@ -49,7 +49,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'checkboxes',
       '#title' => $this->t('Taxonomies'),
       '#options' => $options,
-      '#default_value' => $config->get('taxonomies'),
+      '#default_value' => $config->get('taxonomies') ?? [],
       '#description' => t('Specify taxonomies that should have their listing provided by a CCA Taxonomy Manager view display. Set this <em>after</em> creating the view display and display menu tab.'),
     ];
 
