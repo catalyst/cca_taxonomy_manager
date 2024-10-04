@@ -7,6 +7,64 @@
 
 use Drupal\Core\Render\BubbleableMetadata;
 
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function cca_taxonomy_manager_local_tasks_alter(&$local_tasks) {
+  // Views places the cca_taxonomy_manager view menu tab below the vocabulary list route.
+  $config = \Drupal::config('cca_taxonomy_manager.settings');
+  if ($config->get('taxonomies')) {
+    foreach ($config->get('taxonomies') as $taxonomy) {
+      if ($taxonomy) {
+        if (isset($local_tasks['views_view:view.cca_taxonomy_manager_search.' . $taxonomy])) {
+          $local_tasks['views_view:view.cca_taxonomy_manager_search.' . $taxonomy]['base_route'] = 'entity.taxonomy_vocabulary.overview_form';
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function cca_taxonomy_manager_module_implements_alter(&$implementations, $hook) {
+  if ($hook === 'local_tasks_alter') {
+    // Move cca_taxonomy_manager_local_tasks_alter() to run after
+    // views_local_tasks_alter() as that sets up the base routes.
+    $group = $implementations['cca_taxonomy_manager'];
+    unset($implementations['cca_taxonomy_manager']);
+    $implementations['cca_taxonomy_manager'] = $group;
+  }
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function cca_taxonomy_manager_menu_local_tasks_alter(&$data, $route_name, $cacheability) {
+  $config = \Drupal::config('cca_taxonomy_manager.settings');
+  if ($config->get('taxonomies')) {
+    foreach ($config->get('taxonomies') as $taxonomy) {
+      if ($taxonomy) {
+        if (isset($data['tabs'][0]['views_view:view.cca_taxonomy_manager_search.' . $taxonomy])) {
+          /** @var \Drupal\Core\Url $url */
+          if (isset($data['tabs'][0]['entity.taxonomy_vocabulary.overview_form']['#link']['url'])) {
+            $url = $data['tabs'][0]['entity.taxonomy_vocabulary.overview_form']['#link']['url'];
+            $params = $url->getRouteParameters();
+            if (isset($params['taxonomy_vocabulary']) && $params['taxonomy_vocabulary'] === $taxonomy) {
+              unset($data['tabs'][0]['entity.taxonomy_vocabulary.overview_form']);
+            }
+            else {
+              unset($data['tabs'][0]['views_view:view.cca_taxonomy_manager_search.' . $taxonomy]);
+            }
+          }
+          else {
+            unset($data['tabs'][0]['views_view:view.cca_taxonomy_manager_search.' . $taxonomy]);
+          }
+        }
+      }
+    }
+  }
+}
 
 /**
  * Allow [vocabulary:*] tokens to be used when data contains a view,

@@ -1,0 +1,10 @@
+cca_taxonomy_manager.admin.config:
+  type: config_object
+  label: 'Configuration for CCA Taxonomy Manager'
+  mapping:
+    taxonomies:
+      type: sequence
+      label: Taxonomies
+      sequence:
+        type: string
+        label: 'Taxonomy machine name'
