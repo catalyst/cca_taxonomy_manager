@@ -73,9 +73,9 @@ class CcaTermMove extends ViewsBulkOperationsActionBase implements ViewsBulkOper
   /**
    * {@inheritdoc}
    */
-  public function buildPreConfigurationForm(array $form, array $values, FormStateInterface $form_state): array {
+  public function buildPreConfigurationForm(array $element, array $values, FormStateInterface $form_state): array {
     // noop, required by inheritance.
-    return $form;
+    return $element;
   }
 
   /**
@@ -83,7 +83,7 @@ class CcaTermMove extends ViewsBulkOperationsActionBase implements ViewsBulkOper
    *
    * @param array $form
    *   Form array.
-   * @param Drupal\Core\Form\FormStateInterface $form_state
+   * @param FormStateInterface $form_state
    *   The form state object.
    *
    * @return array
@@ -91,7 +91,7 @@ class CcaTermMove extends ViewsBulkOperationsActionBase implements ViewsBulkOper
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
 
-    $vids = taxonomy_vocabulary_get_names();
+    $vids = \Drupal::entityQuery('taxonomy_vocabulary')->execute();
 
     $form['target_vocabulary'] = [
       '#type' => 'select',
@@ -137,15 +137,11 @@ class CcaTermMove extends ViewsBulkOperationsActionBase implements ViewsBulkOper
    * {@inheritdoc}
    */
   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
-    if ($object->getEntityType() === 'taxonomy_term') {
+    if ($object->getEntityTypeId() === 'taxonomy_term') {
       $access = $object->access('update', $account, TRUE)
         ->andIf($object->status->access('edit', $account, TRUE));
       return $return_as_object ? $access : $access->isAllowed();
     }
-
-    // Other entity types may have different
-    // access methods and properties.
-    return TRUE;
   }
 
   /**
